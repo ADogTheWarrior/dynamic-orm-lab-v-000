@@ -58,12 +58,13 @@ class InteractiveRecord
   end
 
   def self.find_by(attributes)
-attribute_key = nil
-attribute_value = nil
-attributes.each do |key, value|
-  attribute_key = key
-  attribute_value = value
-end
+    attribute_key = nil
+    attribute_value = nil
+    attributes.each do |key, value|
+      attribute_key = key
+      attribute_value = value
+    end
+    
     sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_key} = '#{attribute_value}'"
     DB[:conn].execute(sql)
   end
