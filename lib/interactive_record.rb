@@ -67,7 +67,7 @@ attributes.each do |key, value|
 end
 puts "#{attribute_key}"
 puts "#{attribute_value}"
-    sql = "SELECT * FROM #{self.table_name} WHERE name = '#{attributes[:name]}'"
+    sql = "SELECT * FROM #{self.table_name} WHERE '#{attribute_key}' = '#{attribute_value}'"
     DB[:conn].execute(sql)
   end
 end
